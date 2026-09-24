@@ -151,7 +151,7 @@ Estas correcciones cambian los resultados de manera importante; conviene conocer
 5. **ANP:** los valores con `{a X km}` corresponden a puntos *fuera* del área. Son 227,868 registros que antes contaban como dentro.
 6. **Mamíferos marinos:** se identifican también por su taxonomía (Cetacea, Sirenia y pinnípedos), no solo por el campo `ambiente`.
 7. **Duplicados de evento:** mismo taxón, mismo punto y misma fecha. Se conservan como ejemplares, pero se cuentan una sola vez en los análisis de presencia.
-8. **Zonas UTM:** cada zona incluye su meridiano oriental y excluye el occidental, como en los archivos por zona de CONABIO. Los siete límites de `config.ZONAS_UTM` están validados contra esos archivos (versión 2025-12): coinciden 626,674 de 626,675 registros, y la excepción es un registro marcado como de México con coordenadas en California. Para repetir la validación, coloca los `mamiferosutm<zona>.csv` en la raíz y corre `.\venv\Scripts\python.exe validar_zonas.py`.
+8. **Zonas UTM:** cada zona incluye su meridiano oriental y excluye el occidental, como en los archivos por zona de CONABIO. Los siete límites de `config.ZONAS_UTM` están validados contra esos archivos (versión 2025-12): coinciden 626,674 de 626,675 registros, y la excepción es un registro marcado como de México con coordenadas en California. Para repetir la validación, descarga los `mamiferosutm<zona>.csv` del [geoportal de CONABIO](http://www.conabio.gob.mx/informacion/gis/?mylayers=mamiferos%7Ct&active=mamiferos), guárdalos en `data/crudo/snib_2025-12/` y corre `.\venv\Scripts\python.exe validar_zonas.py`.
 
 ## Limitaciones
 

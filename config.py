@@ -5,6 +5,9 @@ RAIZ = Path(__file__).resolve().parent
 PARQUET_MAESTRO = RAIZ / "mamiferos.202503.parquet" / "mamiferos.parquet"
 DIR_PROCESADO = RAIZ / "data" / "procesado"
 DIR_OUTPUTS = RAIZ / "outputs"
+# CSV por zona UTM (mamiferosutm<zona>.csv) del geoportal de CONABIO, version 2025-12;
+# solo se usan para validar ZONAS_UTM (validar_zonas.py)
+DIR_CSV_ZONAS = RAIZ / "data" / "crudo" / "snib_2025-12"
 
 # Zonas UTM de Mexico: nombre -> (lon_oeste, lon_este], mismo criterio que los
 # CSV mamiferosutm<zona>.csv de CONABIO (lon > oeste & lon <= este). Las siete

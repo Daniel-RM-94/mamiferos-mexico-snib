@@ -1,8 +1,9 @@
 """Valida los limites de config.ZONAS_UTM contra los CSV por zona de CONABIO.
 
-Los CSV (mamiferosutm<zona>.csv, uno por zona) se descargan del SNIB y no se
-versionan. Pueden ser de una version del SNIB distinta a la del Parquet maestro,
-por lo que la validacion no exige que coincidan los idejemplar 1:1:
+Los CSV (mamiferosutm<zona>.csv, uno por zona) se descargan del geoportal de
+CONABIO, se guardan en config.DIR_CSV_ZONAS y no se versionan. Pueden ser de
+una version del SNIB distinta a la del Parquet maestro, por lo que la validacion
+no exige que coincidan los idejemplar 1:1:
 
 1. Regla geografica: cada registro de un CSV debe caer, por su longitud, latitud
    y paismapa, en la zona de su archivo segun pipeline.enriquecer.asignar_zona.
@@ -10,8 +11,8 @@ por lo que la validacion no exige que coincidan los idejemplar 1:1:
    quedar en la misma zona en ambos.
 
 Uso:
-    .\\venv\\Scripts\\python.exe validar_zonas.py              # CSV en la raiz
-    .\\venv\\Scripts\\python.exe validar_zonas.py --dir data/validacion
+    .\\venv\\Scripts\\python.exe validar_zonas.py              # CSV en config.DIR_CSV_ZONAS
+    .\\venv\\Scripts\\python.exe validar_zonas.py --dir otra/carpeta
 """
 import argparse
 import sys
@@ -20,7 +21,7 @@ from pathlib import Path
 import pandas as pd
 import pyarrow.dataset as ds
 
-from config import PARQUET_MAESTRO, RAIZ, ZONAS_UTM
+from config import DIR_CSV_ZONAS, PARQUET_MAESTRO, ZONAS_UTM
 from pipeline.enriquecer import asignar_zona
 
 
@@ -78,6 +79,7 @@ def main(directorio: Path) -> int:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    parser.add_argument("--dir", type=Path, default=RAIZ,
-                        help="carpeta con los mamiferosutm<zona>.csv (por defecto, la raiz)")
+    parser.add_argument("--dir", type=Path, default=DIR_CSV_ZONAS,
+                        help="carpeta con los mamiferosutm<zona>.csv "
+                             "(por defecto, config.DIR_CSV_ZONAS)")
     sys.exit(main(parser.parse_args().dir))
