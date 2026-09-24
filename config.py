@@ -6,9 +6,9 @@ PARQUET_MAESTRO = RAIZ / "mamiferos.202503.parquet" / "mamiferos.parquet"
 DIR_PROCESADO = RAIZ / "data" / "procesado"
 DIR_OUTPUTS = RAIZ / "outputs"
 
-# Zonas UTM de Mexico: nombre -> (lon_oeste, lon_este], mismo criterio que
-# mamiferosutm14a.csv (lon > oeste & lon <= este). Solo 14a esta verificada
-# 1:1 contra el CSV de CONABIO; las demas siguen los meridianos UTM estandar.
+# Zonas UTM de Mexico: nombre -> (lon_oeste, lon_este], mismo criterio que los
+# CSV mamiferosutm<zona>.csv de CONABIO (lon > oeste & lon <= este). Las siete
+# zonas estan validadas contra esos CSV con validar_zonas.py.
 # Deben ser contiguas y estar ordenadas de oeste a este.
 ZONAS_UTM = {
     "11":  (-126, -114),
