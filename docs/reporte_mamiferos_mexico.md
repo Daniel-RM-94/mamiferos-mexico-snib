@@ -26,7 +26,7 @@ El objetivo de este trabajo fue describir los patrones de diversidad, distribuci
 
 ## Materiales y métodos
 
-**Fuente de datos.** Se utilizó la base de ejemplares de mamíferos del SNIB, versión 2025-03, en formato Parquet (996,430 registros, 99 campos). La base incluye registros de México y de otros 29 países de América. Se excluyeron los 16,742 registros fósiles. Para México, los registros se asignaron a siete zonas definidas por meridianos UTM: 11 (al oeste de 114° O), 12 (114–108° O), 13 (108–102° O), 14a (102–99° O), 14b (99–96° O), 15 (96–90° O) y 16 (al este de 90° O). La zona 14a reproduce exactamente el criterio que utiliza la CONABIO para el archivo de esa zona; esto se verificó registro por registro.
+**Fuente de datos.** Se utilizó la base de ejemplares de mamíferos del SNIB, versión 2025-03, en formato Parquet (996,430 registros, 99 campos). La base incluye registros de México y de otros 29 países de América. Se excluyeron los 16,742 registros fósiles. Para México, los registros se asignaron a siete zonas definidas por meridianos UTM: 11 (al oeste de 114° O), 12 (114–108° O), 13 (108–102° O), 14a (102–99° O), 14b (99–96° O), 15 (96–90° O) y 16 (al este de 90° O). Cada zona incluye su meridiano oriental y excluye el occidental, el mismo criterio que utiliza la CONABIO para sus archivos por zona. La asignación se validó contra esos archivos (versión 2025-12): coincide en 626,674 de sus 626,675 registros y en todos los 588,000 registros que comparten con la base analizada. La única excepción es un registro marcado como de México con coordenadas en California (34.0° N), que aquí se excluye.
 
 **Depuración.** Además de convertir los valores nulos y los tipos de dato, se aplicaron las siguientes correcciones:
 1. Se obtuvo el binomio de cada especie eliminando el subgénero. Por ejemplo, «*Artibeus* (*Dermanura*) *glaucus*» se convirtió en *A. glaucus*. Sin esta corrección, especies distintas se fusionaban en una sola.
@@ -226,8 +226,7 @@ Al comparar la EOO reciente con la total en las especies que se siguen registran
 1. **Los registros de presencia no equivalen a abundancia ni a ausencia.** Todos los análisis de riqueza se estandarizaron por esfuerzo, pero los sesgos de detectabilidad entre grupos, como murciélagos y roedores pequeños frente a mamíferos medianos y grandes, persisten.
 2. **Los sitios de registro no son una muestra aleatoria del paisaje.** El cambio de uso de suelo se midió en los sitios donde se han registrado mamíferos, no en todo el territorio, y los métodos del INEGI cambiaron entre series.
 3. **La taxonomía sigue la del catálogo de la CONABIO.** Las cifras de riqueza y endemismo son sensibles a separaciones y sinonimias recientes, y 109 especies con menos de diez localidades en México pueden incluir errores de identificación.
-4. **Los límites de las zonas 11, 12, 13, 14b, 15 y 16 siguen los meridianos UTM estándar.** Solo la zona 14a se verificó contra el archivo correspondiente de la CONABIO.
-5. **La EOO es sensible a puntos mal georreferenciados y la AOO de registros es un valor mínimo.** Ninguno de los resultados constituye una evaluación formal de riesgo.
+4. **La EOO es sensible a puntos mal georreferenciados y la AOO de registros es un valor mínimo.** Ninguno de los resultados constituye una evaluación formal de riesgo.
 
 ## Conclusiones
 

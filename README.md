@@ -46,6 +46,7 @@ Análisis de diversidad, distribución y conservación de los mamíferos de Méx
 CONABIO_mamiferos/
 ├── mamiferos.202503.parquet/    datos del SNIB (996,430 registros, 99 campos; no se versiona)
 ├── mamiferos_utm14.py           comparación registro por registro de la zona 14a con el CSV de CONABIO
+├── validar_zonas.py             valida los límites de las siete zonas contra los CSV de CONABIO
 ├── config.py                    rutas, zonas UTM, tamaño de celda, año "reciente", listas manuales
 ├── run_pipeline.py              pipeline: ingesta -> limpieza -> enriquecimiento -> guardado
 ├── ejecutar_todo.py             corre el pipeline y los 7 módulos en orden
@@ -150,10 +151,10 @@ Estas correcciones cambian los resultados de manera importante; conviene conocer
 5. **ANP:** los valores con `{a X km}` corresponden a puntos *fuera* del área. Son 227,868 registros que antes contaban como dentro.
 6. **Mamíferos marinos:** se identifican también por su taxonomía (Cetacea, Sirenia y pinnípedos), no solo por el campo `ambiente`.
 7. **Duplicados de evento:** mismo taxón, mismo punto y misma fecha. Se conservan como ejemplares, pero se cuentan una sola vez en los análisis de presencia.
+8. **Zonas UTM:** cada zona incluye su meridiano oriental y excluye el occidental, como en los archivos por zona de CONABIO. Los siete límites de `config.ZONAS_UTM` están validados contra esos archivos (versión 2025-12): coinciden 626,674 de 626,675 registros, y la excepción es un registro marcado como de México con coordenadas en California. Para repetir la validación, coloca los `mamiferosutm<zona>.csv` en la raíz y corre `.\venv\Scripts\python.exe validar_zonas.py`.
 
 ## Limitaciones
 
-- Solo el límite de la zona 14a está verificado registro por registro contra el archivo de CONABIO; las demás zonas usan los meridianos UTM estándar (`config.ZONAS_UTM`).
 - Los registros de presencia no son una muestra aleatoria: riqueza, EOO y cambio de uso de suelo describen los sitios muestreados, no todo el territorio.
 - La AOO calculada a partir de registros es un mínimo y alcanzar un umbral del criterio B no equivale a una categoría de riesgo.
 - El mapa base de los HTML (Esri) requiere conexión a internet.
