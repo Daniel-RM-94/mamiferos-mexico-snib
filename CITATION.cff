@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "Si usas este código o sus resultados, cítalo con estos metadatos."
+type: software
+title: "Mamíferos de México: diversidad, distribución y conservación a partir del SNIB-CONABIO"
+abstract: >-
+  Pipeline reproducible en Python para depurar los registros de mamíferos del
+  Sistema Nacional de Información sobre Biodiversidad (SNIB, versión 2025-03) y
+  analizar riqueza estandarizada por esfuerzo, diversidad beta, gradientes
+  latitudinales y altitudinales, cobertura de áreas naturales protegidas,
+  cambio de uso de suelo (INEGI series I–VII) y umbrales del criterio B de la IUCN.
+authors:
+  - family-names: Rico
+    given-names: Daniel
+version: 0.1.0
+date-released: 2026-09-24
+license: MIT
+keywords:
+  - mamíferos
+  - México
+  - biodiversidad
+  - SNIB
+  - CONABIO
+  - conservación
+  - diversidad beta
+  - EOO
+  - AOO
+references:
+  - type: database
+    title: "Sistema Nacional de Información sobre Biodiversidad (SNIB): ejemplares de mamíferos"
+    version: "2025-03"
+    year: 2025
+    authors:
+      - name: "Comisión Nacional para el Conocimiento y Uso de la Biodiversidad (CONABIO)"
+    url: "https://www.snib.mx"
