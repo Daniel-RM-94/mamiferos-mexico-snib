@@ -1,0 +1,23 @@
+# Entorno y cachés de Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Datos: el maestro del SNIB se descarga de CONABIO y el procesado se regenera
+mamiferos.202503.parquet/
+data/
+*.csv.gz
+# CSV por zona UTM de CONABIO, solo para validar los límites de config.ZONAS_UTM
+mamiferosutm*.csv
+
+# Resultados regenerables con ejecutar_todo.py (las figuras del reporte viven en docs/)
+outputs/
+
+# IDE y sistema operativo
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store
