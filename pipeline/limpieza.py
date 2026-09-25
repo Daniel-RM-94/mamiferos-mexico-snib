@@ -47,17 +47,19 @@ def valor_nivel_especie(df: pd.DataFrame, col: str) -> pd.Series:
 
 
 def _parsear_anp(anp: pd.Series) -> pd.DataFrame:
-    """Columnas dentro_anp, anp_tipo y anp_nombre (del ANP que contiene el punto)
-    y anp_distancia_km (al ANP mas cercano cuando el punto esta fuera)."""
+    """Columnas dentro_anp, anp_tipo, anp_categoria y anp_nombre (del ANP que
+    contiene el punto) y anp_distancia_km (al ANP mas cercano cuando esta fuera).
+    La categoria ("Reservas de la biosfera") aparece desde la version 2025-12."""
     entradas = (anp.dropna().str.split(r"\s*\|\s*").explode()
-                .str.extract(r"^(?P<tipo>[^»]+)»\s*(?P<nombre>.*?)\s*"
-                             r"(?:\{a (?P<km>[\d.]+) km\})?$"))
+                .str.extract(r"^(?P<tipo>[^»]+)»\s*(?:(?P<categoria>[^›]*?)\s*›\s*)?"
+                             r"(?P<nombre>.*?)\s*(?:\{a (?P<km>[\d.]+) km\})?$"))
     entradas["km"] = pd.to_numeric(entradas["km"])
     dentro = entradas[entradas["km"].isna()]
     primera = dentro.groupby(level=0).first()
     resultado = pd.DataFrame(index=anp.index)
     resultado["dentro_anp"] = anp.index.isin(dentro.index)
     resultado["anp_tipo"] = primera["tipo"].str.strip()
+    resultado["anp_categoria"] = primera["categoria"]
     resultado["anp_nombre"] = primera["nombre"]
     resultado["anp_distancia_km"] = entradas.groupby(level=0)["km"].min()
     resultado.loc[resultado["dentro_anp"], "anp_distancia_km"] = 0.0
@@ -116,7 +118,8 @@ def limpieza(df: pd.DataFrame) -> pd.DataFrame:
     df["es_exotica"] = df["especie"].isin(exoticas | set(ESPECIES_INTRODUCIDAS))
 
     # 7. ANP. `anp` lista una o varias areas separadas por " | ", p. ej.
-    #    "Federal» Janos" (dentro) o "Estatal» Quebrada de Santa Barbara {a 4.111 km}"
+    #    "Federal» Áreas de protección de flora y fauna › Janos" (dentro) o
+    #    "Estatal» Parque Estatal › Sierra de Guadalupe {a 1.183 km}"
     #    (FUERA, a esa distancia). Dentro = alguna entrada sin distancia.
     df = df.join(_parsear_anp(df["anp"]))
 

@@ -111,18 +111,28 @@ def test_exotica_se_propaga_a_toda_la_especie(crear_registros):
 
 def test_anp_con_distancia_es_fuera(crear_registros):
     df = limpieza(crear_registros(
-        {"anp": "Federal» Janos"},
-        {"anp": "Estatal» Quebrada de Santa Barbara {a 4.111 km}"},
-        {"anp": "Estatal» Sierra {a 2.5 km} | Federal» Calakmul"},
+        {"anp": "Federal» Áreas de protección de flora y fauna › Janos"},
+        {"anp": "Estatal» Parque Estatal › Sierra de Guadalupe: Polígono 1 (México) {a 1.183 km}"},
+        {"anp": "Estatal» Reserva Estatal › Sierra {a 2.5 km} | "
+                "Federal» Reservas de la biosfera › Calakmul"},
         {},
     ))
     assert df["dentro_anp"].tolist() == [True, False, True, False]
     assert df.at[0, "anp_nombre"] == "Janos"
+    assert df.at[0, "anp_categoria"] == "Áreas de protección de flora y fauna"
     assert pd.isna(df.at[1, "anp_nombre"])
     assert df.at[2, "anp_nombre"] == "Calakmul"
+    assert df.at[2, "anp_tipo"] == "Federal"
     assert df.at[0, "anp_distancia_km"] == 0.0
-    assert df.at[1, "anp_distancia_km"] == 4.111
+    assert df.at[1, "anp_distancia_km"] == 1.183
     assert pd.isna(df.at[3, "anp_distancia_km"])
+
+
+def test_anp_formato_sin_categoria(crear_registros):
+    # versiones anteriores a 2025-12: "Tipo» Nombre", sin categoria
+    df = limpieza(crear_registros({"anp": "Federal» Janos"}))
+    assert df.at[0, "anp_nombre"] == "Janos"
+    assert pd.isna(df.at[0, "anp_categoria"])
 
 
 def test_duplicado_de_evento_marca_solo_repeticiones(crear_registros):
