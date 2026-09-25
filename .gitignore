@@ -11,6 +11,8 @@ __pycache__/
 data/
 *.parquet
 *.csv
+# ...excepto las tablas de fuentes y licencias, que se publican como atribución
+!docs/*.csv
 
 # Resultados regenerables con ejecutar_todo.py (las figuras del reporte viven en docs/)
 outputs/

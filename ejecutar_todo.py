@@ -1,4 +1,4 @@
-"""Ejecuta el pipeline y los ocho modulos de analisis, en orden.
+"""Ejecuta el pipeline, los modulos de analisis y la tabla de fuentes, en orden.
 
 Uso (desde la raiz del proyecto, con el Python del entorno virtual):
     .\\venv\\Scripts\\python.exe ejecutar_todo.py
@@ -28,6 +28,7 @@ PASOS = [
     ("gradientes", ["-m", "analisis.gradientes"], "latitud y altitud"),
     ("eoo_aoo", ["-m", "analisis.eoo_aoo"], "EOO, AOO y criterio B de la IUCN"),
     ("marinos", ["-m", "analisis.marinos"], "cuencas, ballenas y especies marinas en riesgo"),
+    ("fuentes", ["-m", "pipeline.fuentes"], "fuentes y licencias de los datos -> docs"),
 ]
 
 
