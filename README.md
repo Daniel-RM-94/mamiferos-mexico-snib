@@ -1,8 +1,8 @@
 # Mamíferos de México · SNIB-CONABIO
 
-Análisis de diversidad, distribución y conservación de los mamíferos de México a partir de los registros del **Sistema Nacional de Información sobre Biodiversidad (SNIB)**, versión 2025-12. Los datos se organizan en siete zonas UTM (11, 12, 13, 14a, 14b, 15 y 16) y se comparan con registros de Centroamérica, Estados Unidos y el Caribe.
+Análisis de diversidad, distribución y conservación de los mamíferos de México a partir de los registros del **Sistema Nacional de Información sobre Biodiversidad (SNIB)**, versión 2025-12. Los datos se organizan en siete zonas UTM (11, 12, 13, 14a, 14b, 15 y 16) y se comparan con registros de Centroamérica, Estados Unidos y el Caribe. Los mamíferos marinos se analizan aparte, por cuenca oceánica.
 
-**Reporte completo, con redacción tipo artículo y 18 figuras:** [docs/reporte_mamiferos_mexico.md](docs/reporte_mamiferos_mexico.md)
+**Reporte completo, con redacción tipo artículo y 22 figuras:** [docs/reporte_mamiferos_mexico.md](docs/reporte_mamiferos_mexico.md)
 
 ---
 
@@ -26,6 +26,9 @@ Análisis de diversidad, distribución y conservación de los mamíferos de Méx
 - **La península de Yucatán se transformó rápidamente.** Sus sitios de registro con uso agrícola, pecuario o urbano pasaron del 15% al 47.5% entre las series I y VII del INEGI.
 - **Cinco roedores de distribución muy restringida alcanzan umbrales de amenaza por EOO sin estar catalogados.** Entre ellos, *Neotamias solivagus* (1,233 km²) y la tuza del Nevado de Toluca, *Cratogeomys planiceps* (1,761 km²).
 - **La estacionalidad corregida por esfuerzo recupera migraciones conocidas.** *Leptonycteris yerbabuenae* alcanza su máximo en el norte en abril y en el sur en septiembre.
+- **El Pacífico y el Golfo de California comparten casi toda su fauna marina.** Tienen 33 especies en común (Jaccard = 0.72) y riqueza similar a igual esfuerzo; el Atlántico mexicano es más pobre y su fauna es en gran parte un subconjunto de la del Pacífico.
+- **El calendario de las ballenas se recupera, pero el aparente adelanto de la jorobada es un artefacto.** Su temporada en el Pacífico parece adelantarse de marzo a enero desde 2010, pero coincide con el paso de registros en Revillagigedo a registros en la costa de Baja California y Los Cabos. En el Golfo de California se mantiene en febrero.
+- **La vaquita no tiene registros en el SNIB desde 2008**, y el cachalote tiene solo el 7% de sus 759 registros dentro de ANP.
 
 <table>
 <tr>
@@ -48,7 +51,7 @@ CONABIO_mamiferos/
 ├── validar_zonas.py             valida los límites de las siete zonas contra los CSV de CONABIO
 ├── config.py                    rutas, zonas UTM, tamaño de celda, año "reciente", listas manuales
 ├── run_pipeline.py              pipeline: ingesta -> limpieza -> enriquecimiento -> guardado
-├── ejecutar_todo.py             corre el pipeline y los 7 módulos en orden
+├── ejecutar_todo.py             corre el pipeline y los 8 módulos en orden
 ├── pipeline/
 │   ├── convertir.py             CSV del SNIB -> Parquet, con verificación campo por campo
 │   ├── ingesta.py               lectura con proyección de columnas y filtros de pyarrow
@@ -63,7 +66,8 @@ CONABIO_mamiferos/
 │   ├── uso_suelo.py             series INEGI I–VII: especialización, tolerancia, cambio de uso
 │   ├── temporal.py              inventario en el tiempo y estacionalidad de murciélagos
 │   ├── gradientes.py            riqueza y composición por latitud y altitud
-│   └── eoo_aoo.py               EOO, AOO y umbrales del criterio B de la IUCN
+│   ├── eoo_aoo.py               EOO, AOO y umbrales del criterio B de la IUCN
+│   └── marinos.py               cuencas oceánicas, calendario de ballenas, especies marinas en riesgo
 ├── tests/                       pruebas con registros sintéticos (pytest)
 ├── data/crudo/snib_2025-12/     CSV y Parquet del SNIB (1,000,085 registros, 98 campos; no se versiona)
 ├── data/procesado/              salida del pipeline (Parquet particionado por zona o país)
@@ -108,7 +112,7 @@ Después de la verificación se borraron los CSV (2.8 GB) y la versión anterior
 
 ## Uso
 
-Para correr todo, que tarda unos 90 s:
+Para correr todo, que tarda unos 2 minutos:
 
 ```powershell
 .\venv\Scripts\python.exe ejecutar_todo.py
@@ -129,6 +133,7 @@ Cada módulo también puede correrse por separado y acepta parámetros:
 .\venv\Scripts\python.exe -m analisis.mapas --especie "Tapirus bairdii" "Lynx rufus"
 .\venv\Scripts\python.exe -m analisis.temporal --especies "Myotis velifer"
 .\venv\Scripts\python.exe -m analisis.eoo_aoo --mapa "Romerolagus diazi"
+.\venv\Scripts\python.exe -m analisis.marinos --ballenas "Megaptera novaeangliae" "Orcinus orca"
 ```
 
 Para usar los datos procesados en análisis propios:
@@ -140,7 +145,7 @@ df = cargar_procesado(["14a", "14b"], columnas=["especie", "latitud", "longitud"
 
 ## Pruebas
 
-Las pruebas usan registros sintéticos que reproducen cada decisión de depuración, por lo que no necesitan los datos del SNIB. Cubren la limpieza, la asignación de zonas UTM, el guardado particionado, la rarefacción, Chao1, la diversidad beta, la EOO y la AOO, y los umbrales del criterio B:
+Las pruebas usan registros sintéticos que reproducen cada decisión de depuración, por lo que no necesitan los datos del SNIB. Cubren la limpieza, la asignación de zonas UTM, el guardado particionado, la rarefacción, Chao1, la diversidad beta, la EOO y la AOO, los umbrales del criterio B, la conversión a Parquet, la asignación de cuencas oceánicas y la fecha central de la temporada:
 
 ```powershell
 .\venv\Scripts\python.exe -m pip install -r requirements-dev.txt
@@ -159,6 +164,7 @@ Las pruebas usan registros sintéticos que reproducen cada decisión de depuraci
 | `temporal` | ¿Cómo se construyó el inventario? ¿Cuándo está cada murciélago migratorio en el norte y en el sur? | `registros_decada_tipo.png`, `acumulacion_especies.png`, `estacionalidad.png` |
 | `gradientes` | ¿Cómo cambian la riqueza y la composición con la latitud y la altitud? | `gradiente_latitud.png`, `gradiente_altitud.png`, `alta_montana.png` |
 | `eoo_aoo` | ¿Qué especies alcanzan umbrales de amenaza por su distribución restringida? | `eoo_aoo.csv`, `candidatas.csv`, `eoo_*.html` |
+| `marinos` | ¿Cómo difiere la fauna marina entre cuencas? ¿Cuándo están las ballenas y ha cambiado su temporada? ¿Qué tan protegidas están las especies marinas en riesgo? | `cuencas.png`, `estacionalidad_ballenas.png`, `fenologia_ballenas.png`, `riesgo_marinos.csv`, `vaquita.png` |
 
 ## Decisiones de depuración
 
@@ -177,6 +183,7 @@ Estas correcciones cambian los resultados de manera importante; conviene conocer
 
 - Los registros de presencia no son una muestra aleatoria: riqueza, EOO y cambio de uso de suelo describen los sitios muestreados, no todo el territorio.
 - La AOO calculada a partir de registros es un mínimo y alcanzar un umbral del criterio B no equivale a una categoría de riesgo.
+- Los registros de mamíferos marinos son casi todos avistamientos (87%) concentrados en sitios y meses de observación turística; las cuencas se asignan con reglas geográficas aproximadas (ver `analisis/marinos.py`).
 - El mapa base de los HTML (Esri) requiere conexión a internet.
 
 ## Fuente de los datos

@@ -6,13 +6,13 @@
 
 ## Resumen
 
-Se analizaron 983,343 registros de mamíferos del Sistema Nacional de Información sobre Biodiversidad (SNIB), de los cuales 617,216 corresponden a México y se organizaron en siete zonas UTM (11, 12, 13, 14a, 14b, 15 y 16). Tras la depuración taxonómica y geográfica, el conjunto incluye 657 especies nativas (607 terrestres y 50 marinas) y 201 especies endémicas. La construcción del inventario ha sido heterogénea en el tiempo: las colecciones científicas alcanzaron su máximo en la década de 1960 y, desde 2010, casi el 88% de los registros provienen de observaciones de ciencia ciudadana. Al estandarizar el esfuerzo de muestreo mediante rarefacción, las zonas 14b, 14a, 13 y 15 presentan la mayor riqueza (285–305 especies en 11,657 registros), y las zonas 11 (Baja California, 114 especies) y 16 (península de Yucatán, 152 especies) la menor. La similitud faunística disminuye con la distancia geográfica (Jaccard de 0.71 entre las zonas 14a y 14b, y de 0.05 entre las zonas 11 y 16) y responde casi por completo a recambio de especies. Se observó un gradiente latitudinal en la composición: los murciélagos representan el 51% de las especies en el extremo sur y el 18% en el norte, mientras que los roedores muestran el patrón opuesto. De las 657 especies nativas, 193 se encuentran listadas en la NOM-059-SEMARNAT-2010 y 90 están amenazadas según la IUCN; 29 especies amenazadas globalmente no figuran en la norma mexicana. Treinta y dos especies en riesgo tienen 10% o menos de sus registros dentro de Áreas Naturales Protegidas (ANP), la mayoría endémicas de las sierras de Oaxaca y Guerrero. De los sitios de registro que en 1985 tenían vegetación natural, el 25.5% corresponde hoy a uso agrícola, pecuario o urbano, y la zona 16 pasó del 15% al 47.5% de sitios transformados. Noventa y una especies no tienen registros desde el año 2000. El cálculo de la extensión de presencia identificó cinco especies de roedores, cuatro de ellas endémicas, que alcanzan umbrales de amenaza del criterio B de la IUCN sin estar catalogadas en ninguna lista de riesgo.
+Se analizaron 983,343 registros de mamíferos del Sistema Nacional de Información sobre Biodiversidad (SNIB), de los cuales 617,216 corresponden a México y se organizaron en siete zonas UTM (11, 12, 13, 14a, 14b, 15 y 16). Tras la depuración taxonómica y geográfica, el conjunto incluye 657 especies nativas (607 terrestres y 50 marinas) y 201 especies endémicas. La construcción del inventario ha sido heterogénea en el tiempo: las colecciones científicas alcanzaron su máximo en la década de 1960 y, desde 2010, casi el 88% de los registros provienen de observaciones de ciencia ciudadana. Al estandarizar el esfuerzo de muestreo mediante rarefacción, las zonas 14b, 14a, 13 y 15 presentan la mayor riqueza (285–305 especies en 11,657 registros), y las zonas 11 (Baja California, 114 especies) y 16 (península de Yucatán, 152 especies) la menor. La similitud faunística disminuye con la distancia geográfica (Jaccard de 0.71 entre las zonas 14a y 14b, y de 0.05 entre las zonas 11 y 16) y responde casi por completo a recambio de especies. Se observó un gradiente latitudinal en la composición: los murciélagos representan el 51% de las especies en el extremo sur y el 18% en el norte, mientras que los roedores muestran el patrón opuesto. De las 657 especies nativas, 193 se encuentran listadas en la NOM-059-SEMARNAT-2010 y 90 están amenazadas según la IUCN; 29 especies amenazadas globalmente no figuran en la norma mexicana. Treinta y dos especies en riesgo tienen 10% o menos de sus registros dentro de Áreas Naturales Protegidas (ANP), la mayoría endémicas de las sierras de Oaxaca y Guerrero. De los sitios de registro que en 1985 tenían vegetación natural, el 25.5% corresponde hoy a uso agrícola, pecuario o urbano, y la zona 16 pasó del 15% al 47.5% de sitios transformados. Noventa y una especies no tienen registros desde el año 2000. El cálculo de la extensión de presencia identificó cinco especies de roedores, cuatro de ellas endémicas, que alcanzan umbrales de amenaza del criterio B de la IUCN sin estar catalogadas en ninguna lista de riesgo. En los mamíferos marinos, el Pacífico y el Golfo de California comparten casi toda su fauna (Jaccard de 0.72); el índice de estacionalidad reproduce los calendarios de las ballenas jorobada, gris y azul, y la vaquita no tiene registros en el SNIB desde 2008.
 
-**Palabras clave:** Mammalia, SNIB, rarefacción, diversidad beta, NOM-059, áreas naturales protegidas, cambio de uso de suelo, extensión de presencia.
+**Palabras clave:** Mammalia, SNIB, rarefacción, diversidad beta, NOM-059, áreas naturales protegidas, cambio de uso de suelo, extensión de presencia, mamíferos marinos.
 
 ## Abstract
 
-We analyzed 983,343 mammal records from Mexico's National Biodiversity Information System (SNIB); 617,216 records from Mexico were organized into seven UTM zones. After taxonomic and geographic cleaning, the dataset comprises 657 native species (607 terrestrial, 50 marine) and 201 endemics. Knowledge accumulation has been uneven: museum collecting peaked in the 1960s and, since 2010, nearly 88% of records come from citizen-science observations. After rarefaction, zones 14b, 14a, 13 and 15 hold the highest richness (285–305 species per 11,657 records). Faunal similarity decays with distance (Jaccard 0.71 between zones 14a and 14b; 0.05 between zones 11 and 16) and is driven almost entirely by species turnover. Bats make up 51% of species in the southernmost latitudes and 18% in the north, with rodents showing the reverse trend. Of the native species, 193 are listed in Mexico's NOM-059 and 90 are globally threatened (IUCN); 29 globally threatened species are absent from the national list. Thirty-two at-risk species have 10% or less of their records inside protected areas. Of the sites with natural vegetation in 1985, 25.5% are now agricultural, pastoral or urban land, and in the Yucatán Peninsula (zone 16) the share of transformed sites rose from 15% to 47.5%. Ninety-one species lack records since 2000. Extent of occurrence analysis flagged five rodent species, four of them endemic, that meet IUCN criterion B thresholds but are not listed in any risk category.
+We analyzed 983,343 mammal records from Mexico's National Biodiversity Information System (SNIB); 617,216 records from Mexico were organized into seven UTM zones. After taxonomic and geographic cleaning, the dataset comprises 657 native species (607 terrestrial, 50 marine) and 201 endemics. Knowledge accumulation has been uneven: museum collecting peaked in the 1960s and, since 2010, nearly 88% of records come from citizen-science observations. After rarefaction, zones 14b, 14a, 13 and 15 hold the highest richness (285–305 species per 11,657 records). Faunal similarity decays with distance (Jaccard 0.71 between zones 14a and 14b; 0.05 between zones 11 and 16) and is driven almost entirely by species turnover. Bats make up 51% of species in the southernmost latitudes and 18% in the north, with rodents showing the reverse trend. Of the native species, 193 are listed in Mexico's NOM-059 and 90 are globally threatened (IUCN); 29 globally threatened species are absent from the national list. Thirty-two at-risk species have 10% or less of their records inside protected areas. Of the sites with natural vegetation in 1985, 25.5% are now agricultural, pastoral or urban land, and in the Yucatán Peninsula (zone 16) the share of transformed sites rose from 15% to 47.5%. Ninety-one species lack records since 2000. Extent of occurrence analysis flagged five rodent species, four of them endemic, that meet IUCN criterion B thresholds but are not listed in any risk category. Among marine mammals, the Pacific and the Gulf of California share nearly all their species (Jaccard 0.72); the seasonality index recovers the calendars of humpback, gray and blue whales, and the vaquita has no SNIB records since 2008.
 
 ---
 
@@ -22,7 +22,7 @@ México es uno de los países con mayor riqueza de mamíferos del mundo, con 564
 
 El Sistema Nacional de Información sobre Biodiversidad (SNIB), administrado por la CONABIO, integra estos registros en una sola base con taxonomía homologada, georreferenciación validada y atributos asociados a cada punto: categorías de riesgo, endemismo, pertenencia a ANP y el tipo de vegetación y uso de suelo en las siete series cartográficas del INEGI. Sin embargo, los registros de presencia no son una muestra aleatoria del territorio. El esfuerzo de muestreo varía entre regiones, épocas y tipos de registro, y esta variación puede confundirse con los patrones biológicos si no se controla.
 
-El objetivo de este trabajo fue describir los patrones de diversidad, distribución y conservación de los mamíferos de México a partir de la versión 2025-12 del SNIB. Se analizaron siete zonas UTM y se prestó especial atención a separar los patrones biológicos de los sesgos de muestreo. Los análisis abarcan: (1) la construcción histórica del inventario; (2) la riqueza y la composición entre zonas; (3) los gradientes latitudinal y altitudinal; (4) el estado de conservación y la cobertura de las ANP; (5) el cambio de uso de suelo en los sitios de registro; (6) la estacionalidad de murciélagos migratorios, y (7) la extensión de presencia y el área de ocupación de cada especie.
+El objetivo de este trabajo fue describir los patrones de diversidad, distribución y conservación de los mamíferos de México a partir de la versión 2025-12 del SNIB. Se analizaron siete zonas UTM y se prestó especial atención a separar los patrones biológicos de los sesgos de muestreo. Los análisis abarcan: (1) la construcción histórica del inventario; (2) la riqueza y la composición entre zonas; (3) los gradientes latitudinal y altitudinal; (4) el estado de conservación y la cobertura de las ANP; (5) el cambio de uso de suelo en los sitios de registro; (6) la estacionalidad de murciélagos migratorios; (7) la extensión de presencia y el área de ocupación de cada especie, y (8) la diversidad, el calendario migratorio y el estado de conservación de los mamíferos marinos.
 
 ## Materiales y métodos
 
@@ -49,6 +49,8 @@ Con estas correcciones, el conjunto analizado para las especies nativas terrestr
 **Estacionalidad.** Para seis especies de murciélagos migratorios se calculó un índice mensual corregido por esfuerzo: la proporción que representa la especie entre todos los registros de murciélagos de cada mes, dividida entre su proporción anual. El índice se calculó con una ventana móvil de tres meses y por separado para el norte (≥ 24° N) y el sur del país.
 
 **Extensión de presencia y área de ocupación.** La extensión de presencia (EOO) se calculó como el área del polígono convexo mínimo y el área de ocupación (AOO) como el número de celdas de 2 × 2 km ocupadas. Las áreas se midieron en una proyección cónica equivalente de Albers centrada en México. Los resultados se compararon con los umbrales de los subcriterios B1 y B2 de la IUCN (IUCN Standards and Petitions Committee, 2024), con todos los registros y con los registros desde 2000. No se evaluaron las especies con menos de diez localidades.
+
+**Mamíferos marinos.** Los análisis anteriores se limitaron a las especies terrestres, salvo el de conservación. Las 50 especies marinas (cetáceos, sirenios, pinnípedos y nutria marina) se analizaron por separado con 29,207 registros únicos de México. Como las zonas UTM no son una unidad natural en el mar, cada registro se asignó a una de cuatro cuencas con reglas geográficas: Pacífico, Golfo de California (al este del eje de la península de Baja California y al norte de la línea Cabo San Lucas–Punta Piaxtla, límite sur de la Organización Hidrográfica Internacional; IHO, 1953), Golfo de México (al este de 98° O y al norte del istmo de Tehuantepec) y Caribe (costa de Quintana Roo al sur de Cabo Catoche). La asignación coincidió con el estado de todos los registros que lo tienen en las entidades con una sola costa. La riqueza por cuenca se comparó con rarefacción y Chao1, y la similitud con Jaccard y la partición de Baselga (2010). Para cuatro ballenas se calculó el mismo índice mensual de estacionalidad que para los murciélagos, usando todos los registros de cetáceos de la cuenca como medida del esfuerzo de cada mes. La fecha central de la temporada se estimó por cuenca y década como la media circular de los meses (Batschelet, 1981), ponderada por la tasa de detección (registros de la especie entre registros de cetáceos del mes), con intervalos de confianza del 95% obtenidos con 2,000 remuestreos (Efron y Tibshirani, 1993). Por último, se describieron las especies marinas en riesgo (NOM-059 A, P o E, o IUCN VU a EX) y la vaquita (*Phocoena sinus*) por década.
 
 Todos los análisis se realizaron en Python 3.12 con pandas, pyarrow, SciPy, Matplotlib, folium y pyproj. El código completo se encuentra en este repositorio y los resultados se reproducen con el comando `ejecutar_todo.py`.
 
@@ -219,6 +221,58 @@ Al comparar la EOO reciente con la total en las especies que se siguen registran
 ![Figura 18](figuras/fig18_contraccion.png)
 **Figura 18.** EOO con todos los registros y con los registros desde 2000, en especies en riesgo o endémicas con al menos diez localidades recientes.
 
+### Mamíferos marinos
+
+**Diversidad por cuenca.** El 62% de los 29,207 registros de mamíferos marinos proviene del Pacífico y el 35% del Golfo de California; el Golfo de México y el Caribe suman apenas 910 registros (Fig. 19, Cuadro 4). A igual esfuerzo (419 registros), el Pacífico y el Golfo de California tienen una riqueza similar (24.5 y 23.1 especies) y comparten casi toda su fauna: 33 especies (Jaccard = 0.72). El Golfo de California es la cuenca mejor inventariada, con el 97% de las especies estimadas por Chao1 ya registradas, frente al 69% del Golfo de México. La fauna del Atlántico mexicano es más pobre y, a diferencia de lo que ocurre entre las zonas terrestres, se parece a la del Pacífico sobre todo por anidamiento: el componente de anidamiento entre el Pacífico y el Caribe es de 0.48, frente a 0.18 de recambio, porque 9 de las 11 especies del Caribe, casi todas delfines de distribución amplia, también se registran en el Pacífico. El Caribe no tiene especies exclusivas. Las especies exclusivas del Pacífico son de aguas templadas del norte, como la marsopa de Dall (*Phocoenoides dalli*), el lobo marino del ártico (*Callorhinus ursinus*) y la nutria marina (*Enhydra lutris*); las del Golfo de California son la vaquita y *Balaenoptera edeni*, y las del Golfo de México, *Mesoplodon europaeus* y la extinta foca monje del Caribe.
+
+**Cuadro 4.** Mamíferos marinos por cuenca oceánica. Riqueza rarefactada a 419 registros; completitud = especies observadas / Chao1.
+
+| Cuenca | Registros | Especies | Rarefactadas | Chao1 | Completitud (%) | Especies en riesgo | % en ANP |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Pacífico | 18,072 | 42 | 24.5 | 49.0 | 85.7 | 10 | 36.4 |
+| Golfo de California | 10,225 | 37 | 23.1 | 38.0 | 97.4 | 10 | 47.3 |
+| Golfo de México | 491 | 17 | 16.1 | 24.5 | 69.4 | 4 | 24.0 |
+| Caribe | 419 | 11 | 11.0 | 13.0 | 84.6 | 1 | 86.9 |
+
+![Figura 19](figuras/fig19_cuencas.png)
+**Figura 19.** Registros de mamíferos marinos por cuenca oceánica (izquierda; las líneas discontinuas son el eje de la península de Baja California y la boca del Golfo de California) y curvas de rarefacción (derecha).
+
+**Calendario de las ballenas.** El índice corregido por esfuerzo reproduce los calendarios migratorios conocidos (Fig. 20). La ballena jorobada (*Megaptera novaeangliae*) está presente de diciembre a abril y prácticamente ausente de junio a octubre, con el máximo en enero en el Golfo de California (índice de 2.1) y en febrero en el Pacífico (1.5). La ballena gris (*Eschrichtius robustus*) alcanza su máximo en marzo en el Pacífico (2.0), donde se concentran sus lagunas de reproducción. La ballena azul (*Balaenoptera musculus*) está sobrerrepresentada en el Golfo de California de febrero a abril y en el Pacífico en junio (4.7), lo que concuerda con su salida del Golfo al final de la primavera. El rorcual común (*B. physalus*), en cambio, se registra en el Golfo de California durante todo el año, con valores cercanos a 1 de febrero a julio, lo que es consistente con una población residente.
+
+![Figura 20](figuras/fig20_estacionalidad_ballenas.png)
+**Figura 20.** Índice de estacionalidad corregido por esfuerzo de cuatro ballenas, por cuenca (solo cuencas con al menos 50 registros de la especie). Un valor de 1 corresponde a lo esperado según el esfuerzo del mes.
+
+La fecha central de la temporada de la ballena jorobada en el Pacífico pasó del 17 de marzo en la década de 2000 al 29 de enero en las de 2010 y 2020, con intervalos de confianza que no se traslapan (Fig. 21). Sin embargo, este adelanto no puede atribuirse a un cambio en la migración. En las décadas de 1990 y 2000, dos terceras partes de los registros del Pacífico provenían del archipiélago de Revillagigedo y de mar abierto, mientras que desde 2010 el 80% proviene de la costa pacífica de Baja California y de Los Cabos. El cambio en la fecha refleja, por tanto, un cambio en los sitios donde se observa a la especie. En el Golfo de California, donde la procedencia de los registros es más estable, la fecha central se mantuvo en febrero en las cuatro décadas (del 5 al 27 de febrero, con intervalos traslapados). La ballena gris tampoco muestra una tendencia: su fecha central osciló entre el 19 de febrero y el 3 de marzo, salvo en la década de 2010, cuyo intervalo es muy amplio.
+
+![Figura 21](figuras/fig21_fenologia_ballenas.png)
+**Figura 21.** Fecha central de la temporada por cuenca y década, con intervalos de confianza del 95%. El número junto a cada punto es el de registros de la especie.
+
+**Especies marinas en riesgo.** Catorce especies marinas están en la NOM-059 como amenazadas, en peligro o probablemente extintas, o en categorías de amenaza de la IUCN (Cuadro 5). La ballena gris, la ballena azul, el rorcual común, el manatí y el elefante marino tienen entre el 58.7% y el 80.5% de sus registros dentro de ANP, sobre todo en El Vizcaíno, Bahía de Loreto, el Santuario del Manatí de la Bahía de Chetumal y las islas del Pacífico de Baja California. El cachalote (*Physeter macrocephalus*, VU) es la excepción: solo el 6.6% de sus 759 registros cae en un ANP. La nutria marina no se registra desde 1972 y la foca monje del Caribe desde 1889.
+
+**Cuadro 5.** Especies marinas en la NOM-059 (A, P o E) o amenazadas según la IUCN (VU, EN, CR o EX).
+
+| Especie | Nombre común | NOM-059 | IUCN | Registros | % en ANP | Último registro |
+|---|---|---|---|---:|---:|---:|
+| *Phocoena sinus* | vaquita | P | CR | 296 | 60.8 | 2008 |
+| *Eubalaena japonica* | ballena franca del Pacífico | P | CR | 2 | 0.0 | sin fecha |
+| *Neomonachus tropicalis* | foca monje del Caribe | E | EX | 4 | 100.0 | 1889 |
+| *Balaenoptera musculus* | ballena azul | Pr | EN | 1,663 | 58.7 | 2024 |
+| *Eschrichtius robustus* | ballena gris | Pr | EN | 1,109 | 75.7 | 2024 |
+| *Balaenoptera borealis* | ballena boreal | Pr | EN | 5 | 60.0 | 2020 |
+| *Enhydra lutris* | nutria marina | — | EN | 4 | 75.0 | 1972 |
+| *Arctocephalus galapagoensis* | lobo fino de Galápagos | — | EN | 1 | 0.0 | 2024 |
+| *Balaenoptera physalus* | rorcual común | Pr | VU | 1,341 | 69.1 | 2024 |
+| *Physeter macrocephalus* | cachalote | Pr | VU | 759 | 6.6 | 2021 |
+| *Trichechus manatus* | manatí | P | VU | 164 | 80.5 | 2023 |
+| *Callorhinus ursinus* | lobo marino del ártico | — | VU | 5 | 0.0 | 2009 |
+| *Arctocephalus townsendi* | lobo fino de Guadalupe | P | LC | 148 | 45.3 | 2024 |
+| *Mirounga angustirostris* | elefante marino del norte | A | LC | 249 | 63.5 | 2024 |
+
+**La vaquita.** La vaquita, el mamífero marino más amenazado del mundo, tiene 296 registros en el SNIB, todos en el Alto Golfo de California (Fig. 22). Los de las décadas de 1960 y 1980 son ejemplares de colección; los de 1990 y 2000 son sobre todo avistamientos. El polígono convexo de sus registros pasó de 8,267 km² en la década de 1990 a 1,430 km² en la de 2000, y la proporción de registros dentro de la Reserva de la Biosfera del Alto Golfo de California y Delta del Río Colorado bajó del 68% al 47%. El último registro en el SNIB es de 2008. La reducción del polígono concuerda con la contracción documentada de la especie, pero también refleja que en la década de 2000 hubo menos registros (89 frente a 162). La ausencia de registros posteriores a 2008 no indica que la especie haya desaparecido: los monitoreos acústicos y visuales de las últimas dos décadas no están integrados en el SNIB, lo que es en sí mismo un vacío de información para la especie que más lo necesita.
+
+![Figura 22](figuras/fig22_vaquita.png)
+**Figura 22.** Registros de la vaquita por década: ubicación y polígono convexo (izquierda) y número de registros, EOO y porcentaje dentro de ANP (derecha).
+
 ---
 
 ## Limitaciones
@@ -227,17 +281,19 @@ Al comparar la EOO reciente con la total en las especies que se siguen registran
 2. **Los sitios de registro no son una muestra aleatoria del paisaje.** El cambio de uso de suelo se midió en los sitios donde se han registrado mamíferos, no en todo el territorio, y los métodos del INEGI cambiaron entre series.
 3. **La taxonomía sigue la del catálogo de la CONABIO.** Las cifras de riqueza y endemismo son sensibles a separaciones y sinonimias recientes, y 111 especies con menos de diez localidades en México pueden incluir errores de identificación.
 4. **La EOO es sensible a puntos mal georreferenciados y la AOO de registros es un valor mínimo.** Ninguno de los resultados constituye una evaluación formal de riesgo.
+5. **Los registros de mamíferos marinos provienen casi todos de avistamientos** (87%), concentrados en los sitios y meses de observación turística. El índice de estacionalidad corrige el esfuerzo mensual, pero no los cambios en los sitios de observación entre décadas, y las cuencas se definieron con reglas geográficas aproximadas.
 
 ## Conclusiones
 
 Los registros del SNIB permiten describir con detalle los patrones de diversidad de los mamíferos de México, siempre que se controle el esfuerzo de muestreo. Una vez estandarizada, la riqueza es similar en las zonas del centro y el sur del país, y la principal diferencia entre regiones está en la identidad de las especies: la fauna cambia casi por completo de oeste a este y de norte a sur, con un reemplazo gradual de roedores por murciélagos.
 
-Desde el punto de vista de la conservación, destacan cuatro prioridades:
+Desde el punto de vista de la conservación, destacan cinco prioridades:
 
 1. **Las sierras de Oaxaca y Guerrero** (zona 14b) concentran especies endémicas en riesgo sin representación en las ANP.
 2. **La península de Yucatán** registró la transformación más rápida de sus sitios de registro.
 3. **Las especies de alta montaña** combinan endemismo, riesgo y poco margen de desplazamiento ante el cambio climático.
 4. **Cinco roedores de distribución muy restringida** alcanzan umbrales de amenaza sin estar catalogados y merecen una evaluación formal.
+5. **Los mamíferos marinos del Alto Golfo de California y el cachalote**: la vaquita carece de registros en el SNIB desde 2008 y el cachalote tiene solo el 7% de sus registros dentro de ANP.
 
 Finalmente, el declive de la colecta científica desde la década de 1960 y el predominio actual de las observaciones ciudadanas implican que los grupos que requieren captura tienen cada vez menos registros. Por ello, mantener programas de colecta y de monitoreo dirigido es indispensable para distinguir los declives reales de la falta de muestreo.
 
@@ -247,15 +303,21 @@ Finalmente, el declive de la colecta científica desde la década de 1960 y el p
 
 Baselga, A. 2010. Partitioning the turnover and nestedness components of beta diversity. *Global Ecology and Biogeography* 19:134–143.
 
+Batschelet, E. 1981. *Circular statistics in biology*. Academic Press, Londres.
+
 Chao, A. 1984. Nonparametric estimation of the number of classes in a population. *Scandinavian Journal of Statistics* 11:265–270.
 
 Chao, A. y L. Jost. 2012. Coverage-based rarefaction and extrapolation: standardizing samples by completeness rather than size. *Ecology* 93:2533–2547.
 
 CONABIO (Comisión Nacional para el Conocimiento y Uso de la Biodiversidad). 2026. Sistema Nacional de Información sobre Biodiversidad (SNIB): ejemplares de mamíferos, versión 2025-12. CONABIO, Ciudad de México. Consultado el 24 de septiembre de 2026 en http://www.conabio.gob.mx/informacion/gis/?mylayers=mamiferos%7Ct&active=mamiferos
 
+Efron, B. y R. J. Tibshirani. 1993. *An introduction to the bootstrap*. Chapman & Hall, Nueva York.
+
 Gotelli, N. J. y R. K. Colwell. 2001. Quantifying biodiversity: procedures and pitfalls in the measurement and comparison of species richness. *Ecology Letters* 4:379–391.
 
 Hurlbert, S. H. 1971. The nonconcept of species diversity: a critique and alternative parameters. *Ecology* 52:577–586.
+
+IHO (International Hydrographic Organization). 1953. *Limits of oceans and seas*. 3.ª ed. Special Publication 23. International Hydrographic Bureau, Mónaco.
 
 INEGI (Instituto Nacional de Estadística y Geografía). Conjunto de datos vectoriales de uso del suelo y vegetación, escala 1:250 000, series I a VII. INEGI, Aguascalientes.
 
