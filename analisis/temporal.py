@@ -159,7 +159,7 @@ def fig_acumulacion(curvas, destino):
 # D3. Estacionalidad
 # ─────────────────────────────────────────
 
-def _suma_movil_circular(serie):
+def suma_movil_circular(serie):
     return serie + serie.shift(1).fillna(serie.iloc[-1]) + serie.shift(-1).fillna(serie.iloc[0])
 
 
@@ -176,7 +176,7 @@ def estacionalidad(df, especies, orden="Chiroptera"):
             n = int(mes_esp.sum())
             if n == 0:
                 continue
-            proporcion = _suma_movil_circular(mes_esp) / _suma_movil_circular(total_mes)
+            proporcion = suma_movil_circular(mes_esp) / suma_movil_circular(total_mes)
             indice = proporcion / (n / total_mes.sum())
             for m in range(1, 13):
                 filas.append({"especie": esp, "banda": banda, "mes": m,
