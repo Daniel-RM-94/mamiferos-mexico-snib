@@ -1,4 +1,4 @@
-"""Ejecuta el pipeline y los siete modulos de analisis, en orden.
+"""Ejecuta el pipeline y los ocho modulos de analisis, en orden.
 
 Uso (desde la raiz del proyecto, con el Python del entorno virtual):
     .\\venv\\Scripts\\python.exe ejecutar_todo.py
@@ -27,6 +27,7 @@ PASOS = [
     ("temporal", ["-m", "analisis.temporal"], "inventario en el tiempo, estacionalidad"),
     ("gradientes", ["-m", "analisis.gradientes"], "latitud y altitud"),
     ("eoo_aoo", ["-m", "analisis.eoo_aoo"], "EOO, AOO y criterio B de la IUCN"),
+    ("marinos", ["-m", "analisis.marinos"], "cuencas, ballenas y especies marinas en riesgo"),
 ]
 
 
