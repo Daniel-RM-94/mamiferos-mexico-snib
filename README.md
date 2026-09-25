@@ -1,6 +1,6 @@
 # Mamíferos de México · SNIB-CONABIO
 
-[![CI](https://github.com/Daniel-RM-94/mamiferos-mexico-snib/actions/workflows/ci.yml/badge.svg)](https://github.com/Daniel-RM-94/mamiferos-mexico-snib/actions/workflows/ci.yml) [![Licencia: MIT](https://img.shields.io/badge/licencia-MIT-blue.svg)](LICENSE) [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/)
+[![CI](https://github.com/Daniel-RM-94/mamiferos-mexico-snib/actions/workflows/ci.yml/badge.svg)](https://github.com/Daniel-RM-94/mamiferos-mexico-snib/actions/workflows/ci.yml) [![Código: MIT](https://img.shields.io/badge/código-MIT-blue.svg)](LICENSE) [![Reporte: CC BY-NC 4.0](https://img.shields.io/badge/reporte-CC%20BY--NC%204.0-lightgrey.svg)](docs/LICENSE) [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/)
 
 Análisis de diversidad, distribución y conservación de los mamíferos de México a partir de los registros del **Sistema Nacional de Información sobre Biodiversidad (SNIB)**, versión 2025-12. Los datos se organizan en siete zonas UTM (11, 12, 13, 14a, 14b, 15 y 16) y se comparan con registros de Centroamérica, Estados Unidos y el Caribe. Los mamíferos marinos se analizan aparte, por cuenca oceánica.
 
@@ -59,7 +59,8 @@ CONABIO_mamiferos/
 │   ├── ingesta.py               lectura con proyección de columnas y filtros de pyarrow
 │   ├── limpieza.py              nulos, tipos, taxonomía, riesgo, exóticas, ANP, duplicados
 │   ├── enriquecer.py            zona UTM, celda de 0.25°, década, incertidumbre, tipo de registro
-│   └── io.py                    guardado particionado y cargar_procesado()
+│   ├── io.py                    guardado particionado y cargar_procesado()
+│   └── fuentes.py               tabla de fuentes originales y licencias de los datos
 ├── analisis/
 │   ├── estilo.py                paleta validada y estilo común de las figuras
 │   ├── comparativo.py           riqueza, rarefacción, Chao1, diversidad beta
@@ -74,10 +75,10 @@ CONABIO_mamiferos/
 ├── data/crudo/snib_2025-12/     CSV y Parquet del SNIB (1,000,085 registros, 98 campos; no se versiona)
 ├── data/procesado/              salida del pipeline (Parquet particionado por zona o país)
 ├── outputs/<módulo>/            tablas CSV, figuras PNG y mapas HTML; logs en outputs/logs/
-├── docs/                        reporte y figuras citadas en él
+├── docs/                        reporte, figuras, fuentes y licencias de los datos (CC BY-NC 4.0)
 ├── pyproject.toml               configuración de pytest y ruff
 ├── CITATION.cff                 metadatos de cita
-└── LICENSE                      licencia MIT
+└── LICENSE                      licencia MIT del código
 ```
 
 ## Instalación
@@ -190,11 +191,31 @@ Estas correcciones cambian los resultados de manera importante; conviene conocer
 
 ## Fuente de los datos
 
-CONABIO. 2026. *Sistema Nacional de Información sobre Biodiversidad (SNIB): ejemplares de mamíferos*, versión 2025-12. Consultado el 24 de septiembre de 2026 en el [geoportal de la CONABIO](http://www.conabio.gob.mx/informacion/gis/?mylayers=mamiferos%7Ct&active=mamiferos). Cada registro indica su licencia de uso (campo `licenciauso`) y su forma de citar (campo `formadecitar`); revísalos antes de publicar resultados derivados.
+CONABIO. 2026. Sistema Nacional de Información sobre Biodiversidad (SNIB). Registros de ejemplares, versión 2025-12. Publicación en el Geoportal y Enciclovida. México. Capa de mamíferos consultada el 24 de septiembre de 2026 en el [geoportal de la CONABIO](http://www.conabio.gob.mx/informacion/gis/?mylayers=mamiferos%7Ct&active=mamiferos).
+
+### Licencias y créditos de los datos
+
+El SNIB integra datos de cientos de colecciones y proyectos, y cada conjunto conserva la licencia que le asignó su proveedor (campos `licenciauso` y `formadecitar`). Es responsabilidad de quien usa los datos respetar esas condiciones. Los registros de México analizados (sin fósiles) tienen estas licencias:
+
+| Licencia | Registros de México | % |
+|---|---:|---:|
+| CC BY 4.0 | 383,209 | 62.1 |
+| CC BY-NC 4.0 | 129,540 | 21.0 |
+| CC0 1.0 | 94,780 | 15.4 |
+| CC BY-NC-SA 4.0 | 4,581 | 0.7 |
+| CC BY-NC-ND 4.0 | 3,473 | 0.6 |
+| CC BY-SA 4.0 | 1,417 | 0.2 |
+| CC BY-ND 4.0 | 216 | 0.03 |
+
+Este proyecto respeta esas condiciones de la siguiente manera:
+
+- **No redistribuye los registros.** El repositorio contiene código y resultados agregados (riqueza, porcentajes, figuras), no los datos del SNIB.
+- **Da crédito a cada fuente.** [`docs/fuentes_datos.csv`](docs/fuentes_datos.csv) lista las 736 formas de citar de los datos usados, con su licencia, número de registros y DOI cuando existe (593 filas lo tienen); [`docs/licencias_datos.csv`](docs/licencias_datos.csv) resume los registros por licencia. Ambas se regeneran con `python -m pipeline.fuentes`.
+- **Uso no comercial.** El 22% de los registros de México tiene licencias no comerciales (NC), por lo que el reporte y las figuras se publican bajo CC BY-NC 4.0.
 
 ## Cómo citar
 
-Si usas este código o sus resultados, cita el repositorio y la fuente de los datos. Los metadatos están en [`CITATION.cff`](CITATION.cff); GitHub los muestra en el botón *Cite this repository*.
+Si usas este código o sus resultados, cita el repositorio y la fuente de los datos (ver [Fuente de los datos](#fuente-de-los-datos)); si reutilizas registros de una fuente en particular, cítala también según [`docs/fuentes_datos.csv`](docs/fuentes_datos.csv). Los metadatos están en [`CITATION.cff`](CITATION.cff); GitHub los muestra en el botón *Cite this repository*.
 
 > Rico, D. 2026. *Mamíferos de México: diversidad, distribución y conservación a partir del SNIB-CONABIO* (versión 0.1.0) [Software]. Licencia MIT. https://github.com/Daniel-RM-94/mamiferos-mexico-snib
 
@@ -204,4 +225,6 @@ Si usas este código o sus resultados, cita el repositorio y la fuente de los da
 
 ## Licencia
 
-El código se distribuye bajo la [licencia MIT](LICENSE). La licencia no cubre los datos del SNIB, que conservan las condiciones de uso de cada registro establecidas por la CONABIO.
+- **Código:** [licencia MIT](LICENSE).
+- **Reporte y figuras** (`docs/`): [Creative Commons Atribución-NoComercial 4.0 Internacional (CC BY-NC 4.0)](docs/LICENSE). Pueden compartirse y adaptarse dando crédito y sin fines comerciales.
+- **Datos del SNIB:** no están en el repositorio y ninguna de las dos licencias los cubre; cada registro conserva la licencia de su proveedor (ver [Licencias y créditos de los datos](#licencias-y-créditos-de-los-datos)).

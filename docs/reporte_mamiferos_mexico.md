@@ -1,6 +1,6 @@
 # Diversidad, distribución y estado de conservación de los mamíferos de México a partir de los registros del SNIB: un análisis por zonas UTM
 
-*Reporte técnico · Septiembre de 2026 · Datos: SNIB-CONABIO, ejemplares de mamíferos, versión 2025-12*
+*Reporte técnico · Septiembre de 2026 · Datos: SNIB-CONABIO, ejemplares de mamíferos, versión 2025-12 · Licencia CC BY-NC 4.0*
 
 ---
 
@@ -26,7 +26,7 @@ El objetivo de este trabajo fue describir los patrones de diversidad, distribuci
 
 ## Materiales y métodos
 
-**Fuente de datos.** Se utilizó la base de ejemplares de mamíferos del SNIB, versión 2025-12, descargada del geoportal de la CONABIO en formato CSV (1,000,085 registros, 98 campos). El archivo se convirtió a Parquet y se verificó que la conversión fuera fiel: mismo número de registros e identificadores y valores idénticos en todos los campos. La base incluye registros de México y de otros 30 países de América. Se excluyeron los 16,742 registros fósiles. Para México, los registros se asignaron a siete zonas definidas por meridianos UTM: 11 (al oeste de 114° O), 12 (114–108° O), 13 (108–102° O), 14a (102–99° O), 14b (99–96° O), 15 (96–90° O) y 16 (al este de 90° O). Cada zona incluye su meridiano oriental y excluye el occidental, el mismo criterio que utiliza la CONABIO para sus archivos por zona. La asignación se validó contra esos archivos, de la misma versión: sus 626,675 registros están en la base completa con valores idénticos en todos los campos, y la regla reproduce la zona de 626,674. La única excepción es un registro marcado como de México con coordenadas en California (34.0° N), que aquí queda sin zona.
+**Fuente de datos.** Se utilizó la base de ejemplares de mamíferos del SNIB, versión 2025-12, descargada del geoportal de la CONABIO en formato CSV (1,000,085 registros, 98 campos). El archivo se convirtió a Parquet y se verificó que la conversión fuera fiel: mismo número de registros e identificadores y valores idénticos en todos los campos. La base incluye registros de México y de otros 30 países de América. Cada conjunto de datos conserva la licencia de su proveedor: de los registros de México, el 62% tiene licencia CC BY 4.0, el 22% licencias no comerciales (CC BY-NC) y el 15% CC0; las 736 fuentes originales, con su licencia y forma de citar, se listan en `docs/fuentes_datos.csv`. Se excluyeron los 16,742 registros fósiles. Para México, los registros se asignaron a siete zonas definidas por meridianos UTM: 11 (al oeste de 114° O), 12 (114–108° O), 13 (108–102° O), 14a (102–99° O), 14b (99–96° O), 15 (96–90° O) y 16 (al este de 90° O). Cada zona incluye su meridiano oriental y excluye el occidental, el mismo criterio que utiliza la CONABIO para sus archivos por zona. La asignación se validó contra esos archivos, de la misma versión: sus 626,675 registros están en la base completa con valores idénticos en todos los campos, y la regla reproduce la zona de 626,674. La única excepción es un registro marcado como de México con coordenadas en California (34.0° N), que aquí queda sin zona.
 
 **Depuración.** Además de convertir los valores nulos y los tipos de dato, se aplicaron las siguientes correcciones:
 1. Se obtuvo el binomio de cada especie eliminando el subgénero. Por ejemplo, «*Artibeus* (*Dermanura*) *glaucus*» se convirtió en *A. glaucus*. Sin esta corrección, especies distintas se fusionaban en una sola.
@@ -309,7 +309,7 @@ Chao, A. 1984. Nonparametric estimation of the number of classes in a population
 
 Chao, A. y L. Jost. 2012. Coverage-based rarefaction and extrapolation: standardizing samples by completeness rather than size. *Ecology* 93:2533–2547.
 
-CONABIO (Comisión Nacional para el Conocimiento y Uso de la Biodiversidad). 2026. Sistema Nacional de Información sobre Biodiversidad (SNIB): ejemplares de mamíferos, versión 2025-12. CONABIO, Ciudad de México. Consultado el 24 de septiembre de 2026 en http://www.conabio.gob.mx/informacion/gis/?mylayers=mamiferos%7Ct&active=mamiferos
+CONABIO. 2026. Sistema Nacional de Información sobre Biodiversidad (SNIB). Registros de ejemplares, versión 2025-12. Publicación en el Geoportal y Enciclovida. México. Capa de mamíferos consultada el 24 de septiembre de 2026 en http://www.conabio.gob.mx/informacion/gis/?mylayers=mamiferos%7Ct&active=mamiferos
 
 Efron, B. y R. J. Tibshirani. 1993. *An introduction to the bootstrap*. Chapman & Hall, Nueva York.
 
@@ -345,3 +345,7 @@ Todos los resultados se generan desde la raíz del proyecto con el Python del en
 ```
 
 Las tablas completas que respaldan cada figura y cifra se encuentran en `outputs/<módulo>/*.csv`. Las figuras de este documento son una copia de `outputs/` al momento de su redacción; si los datos o los parámetros cambian, deben volver a copiarse.
+
+## Anexo: licencias y créditos
+
+Este reporte y sus figuras se distribuyen bajo la licencia Creative Commons Atribución-NoComercial 4.0 Internacional (CC BY-NC 4.0); el código, bajo la licencia MIT. Los registros del SNIB no se redistribuyen y conservan la licencia de su proveedor. Los datos analizados provienen de 736 fuentes originales (colecciones científicas, proyectos financiados por la CONABIO, Naturalista, iNaturalist y conjuntos publicados en GBIF y OBIS), cuyas formas de citar y licencias se listan en `docs/fuentes_datos.csv`; el resumen por licencia está en `docs/licencias_datos.csv`.

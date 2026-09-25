@@ -27,9 +27,10 @@ keywords:
   - AOO
 references:
   - type: database
-    title: "Sistema Nacional de Información sobre Biodiversidad (SNIB): ejemplares de mamíferos"
+    title: "Sistema Nacional de Información sobre Biodiversidad (SNIB). Registros de ejemplares"
     version: "2025-12"
     year: 2026
+    notes: "Publicación en el Geoportal y Enciclovida. México. Cada registro conserva la licencia de su proveedor; ver docs/fuentes_datos.csv."
     authors:
       - name: "Comisión Nacional para el Conocimiento y Uso de la Biodiversidad (CONABIO)"
     url: "http://www.conabio.gob.mx/informacion/gis/?mylayers=mamiferos%7Ct&active=mamiferos"
