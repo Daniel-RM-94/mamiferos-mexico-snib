@@ -93,6 +93,19 @@ Los datos del SNIB no se incluyen en el repositorio. Descarga la capa de mamífe
 
 La conversión se verifica contra el CSV campo por campo y escribe `mamiferos.json` con el SHA-256 del archivo de origen. El CSV usado en este análisis tiene 1,758,486,718 bytes y SHA-256 `23c11df14d598a7731996e0917f7472ca42e7ef85fb4cdb17ed305c563a50287`; si tu descarga difiere, CONABIO publicó otra versión y las cifras pueden cambiar. Una vez convertido, el CSV puede borrarse. `data/procesado/` y `outputs/` se regeneran con `ejecutar_todo.py`.
 
+## Procedencia y verificación de los datos
+
+El análisis usa una sola versión del SNIB, la 2025-12, descargada el 24 de septiembre de 2026. El CSV completo pesa 1.7 GB, así que se convirtió a Parquet (77 MB). Antes de borrar los CSV se verificó que la conversión fuera fiel y que la base completa contuviera, sin cambios, los archivos que CONABIO publica por zona UTM:
+
+| Paso | Qué se comprobó | Resultado |
+|---|---|---|
+| Descarga | `mamiferos.csv`, capa de mamíferos del geoportal de la CONABIO, versión 2025-12 | 1,758,486,718 bytes; SHA-256 `23c11df14d598a7731996e0917f7472ca42e7ef85fb4cdb17ed305c563a50287` |
+| CSV → Parquet (`pipeline.convertir`) | Mismas columnas en el mismo orden, mismo número de filas, `idejemplar` únicos y valores idénticos campo por campo (celda vacía = nulo); coordenadas idénticas como float64 | 1,000,085 registros × 98 campos, 0 diferencias |
+| CSV por zona dentro de `mamiferos.csv` | Cada fila de los siete `mamiferosutm<zona>.csv` (11, 12, 13, 14a, 14b, 15 y 16) está en `mamiferos.csv` con valores idénticos en todas sus columnas | 626,675 de 626,675 filas, que son todos los registros de México |
+| Límites de las zonas (`validar_zonas.py`) | La regla de `config.ZONAS_UTM` asigna a cada registro la zona de su archivo, y los registros del Parquet asignados a una zona están en ese archivo | 626,674 de 626,675 y 626,674 de 626,674; la excepción es un registro marcado como de México con coordenadas en California |
+
+Después de la verificación se borraron los CSV (2.8 GB) y la versión anterior de la base (2024-12), para no mezclar versiones. En `data/crudo/snib_2025-12/` solo quedan `mamiferos.parquet` y `mamiferos.json`, el manifiesto de la conversión con la huella del CSV de origen. Para repetir las verificaciones hay que descargar de nuevo los CSV y correr `.\venv\Scripts\python.exe -m pipeline.convertir --solo-verificar` y `.\venv\Scripts\python.exe validar_zonas.py`.
+
 ## Uso
 
 Para correr todo, que tarda unos 90 s:
@@ -158,7 +171,7 @@ Estas correcciones cambian los resultados de manera importante; conviene conocer
 5. **ANP:** los valores con `{a X km}` corresponden a puntos *fuera* del área. Son 229,534 registros que antes contaban como dentro. La categoría del área («Reservas de la biosfera», etc.) se separa del nombre.
 6. **Mamíferos marinos:** se identifican también por su taxonomía (Cetacea, Sirenia y pinnípedos), no solo por el campo `ambiente`.
 7. **Duplicados de evento:** mismo taxón, mismo punto y misma fecha. Se conservan como ejemplares, pero se cuentan una sola vez en los análisis de presencia.
-8. **Zonas UTM:** cada zona incluye su meridiano oriental y excluye el occidental, como en los archivos por zona de CONABIO. Los siete límites de `config.ZONAS_UTM` están validados contra esos archivos, de la misma versión que `mamiferos.csv`: coinciden 626,674 de 626,675 registros, y la excepción es un registro marcado como de México con coordenadas en California. Para repetir la validación, descarga los `mamiferosutm<zona>.csv` del [geoportal de CONABIO](http://www.conabio.gob.mx/informacion/gis/?mylayers=mamiferos%7Ct&active=mamiferos), guárdalos en `data/crudo/snib_2025-12/` y corre `.\venv\Scripts\python.exe validar_zonas.py`.
+8. **Zonas UTM:** cada zona incluye su meridiano oriental y excluye el occidental, como en los archivos por zona de CONABIO. Los siete límites de `config.ZONAS_UTM` están validados contra esos archivos (ver [Procedencia y verificación de los datos](#procedencia-y-verificación-de-los-datos)).
 
 ## Limitaciones
 
