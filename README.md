@@ -1,5 +1,7 @@
 # Mamíferos de México · SNIB-CONABIO
 
+[![CI](https://github.com/Daniel-RM-94/mamiferos-mexico-snib/actions/workflows/ci.yml/badge.svg)](https://github.com/Daniel-RM-94/mamiferos-mexico-snib/actions/workflows/ci.yml) [![Licencia: MIT](https://img.shields.io/badge/licencia-MIT-blue.svg)](LICENSE) [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/)
+
 Análisis de diversidad, distribución y conservación de los mamíferos de México a partir de los registros del **Sistema Nacional de Información sobre Biodiversidad (SNIB)**, versión 2025-12. Los datos se organizan en siete zonas UTM (11, 12, 13, 14a, 14b, 15 y 16) y se comparan con registros de Centroamérica, Estados Unidos y el Caribe. Los mamíferos marinos se analizan aparte, por cuenca oceánica.
 
 **Reporte completo, con redacción tipo artículo y 22 figuras:** [docs/reporte_mamiferos_mexico.md](docs/reporte_mamiferos_mexico.md)
@@ -194,7 +196,7 @@ CONABIO. 2026. *Sistema Nacional de Información sobre Biodiversidad (SNIB): eje
 
 Si usas este código o sus resultados, cita el repositorio y la fuente de los datos. Los metadatos están en [`CITATION.cff`](CITATION.cff); GitHub los muestra en el botón *Cite this repository*.
 
-> Rico, D. 2026. *Mamíferos de México: diversidad, distribución y conservación a partir del SNIB-CONABIO* (versión 0.1.0) [Software]. Licencia MIT.
+> Rico, D. 2026. *Mamíferos de México: diversidad, distribución y conservación a partir del SNIB-CONABIO* (versión 0.1.0) [Software]. Licencia MIT. https://github.com/Daniel-RM-94/mamiferos-mexico-snib
 
 ## Autor
 
