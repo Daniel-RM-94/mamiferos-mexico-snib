@@ -195,7 +195,7 @@ El índice corregido por esfuerzo recupera patrones migratorios conocidos (Fig. 
 La corrección por esfuerzo es necesaria porque el muestreo de murciélagos es muy estacional: en el sur, por ejemplo, hay el doble de registros en enero que en febrero.
 
 ![Figura 16](figuras/fig16_estacionalidad.png)
-**Figura 16.** Índice de estacionalidad corregido por esfuerzo para seis especies de murciélagos migratorios, en el norte (≥ 24° N) y el sur del país. Un valor de 1 corresponde a lo esperado según el esfuerzo del mes.
+**Figura 16.** Índice de estacionalidad corregido por esfuerzo para seis especies de murciélagos migratorios, en el norte (≥ 24° N) y el sur del país. El eje horizontal indica los meses, de enero a diciembre; un valor de 1 corresponde a lo esperado según el esfuerzo del mes.
 
 ### Extensión de presencia, área de ocupación y criterio B
 
@@ -240,7 +240,7 @@ Al comparar la EOO reciente con la total en las especies que se siguen registran
 **Calendario de las ballenas.** El índice corregido por esfuerzo reproduce los calendarios migratorios conocidos (Fig. 20). La ballena jorobada (*Megaptera novaeangliae*) está presente de diciembre a abril y prácticamente ausente de junio a octubre, con el máximo en enero en el Golfo de California (índice de 2.1) y en febrero en el Pacífico (1.5). La ballena gris (*Eschrichtius robustus*) alcanza su máximo en marzo en el Pacífico (2.0), donde se concentran sus lagunas de reproducción. La ballena azul (*Balaenoptera musculus*) está sobrerrepresentada en el Golfo de California de febrero a abril y en el Pacífico en junio (4.7), lo que concuerda con su salida del Golfo al final de la primavera. El rorcual común (*B. physalus*), en cambio, se registra en el Golfo de California durante todo el año, con valores cercanos a 1 de febrero a julio, lo que es consistente con una población residente.
 
 ![Figura 20](figuras/fig20_estacionalidad_ballenas.png)
-**Figura 20.** Índice de estacionalidad corregido por esfuerzo de cuatro ballenas, por cuenca (solo cuencas con al menos 50 registros de la especie). Un valor de 1 corresponde a lo esperado según el esfuerzo del mes.
+**Figura 20.** Índice de estacionalidad corregido por esfuerzo de cuatro ballenas, por cuenca (solo cuencas con al menos 50 registros de la especie). El eje horizontal indica los meses, de enero a diciembre; un valor de 1 corresponde a lo esperado según el esfuerzo del mes.
 
 La fecha central de la temporada de la ballena jorobada en el Pacífico pasó del 17 de marzo en la década de 2000 al 29 de enero en las de 2010 y 2020, con intervalos de confianza que no se traslapan (Fig. 21). Sin embargo, este adelanto no puede atribuirse a un cambio en la migración. En las décadas de 1990 y 2000, dos terceras partes de los registros del Pacífico provenían del archipiélago de Revillagigedo y de mar abierto, mientras que desde 2010 el 80% proviene de la costa pacífica de Baja California y de Los Cabos. El cambio en la fecha refleja, por tanto, un cambio en los sitios donde se observa a la especie. En el Golfo de California, donde la procedencia de los registros es más estable, la fecha central se mantuvo en febrero en las cuatro décadas (del 5 al 27 de febrero, con intervalos traslapados). La ballena gris tampoco muestra una tendencia: su fecha central osciló entre el 19 de febrero y el 3 de marzo, salvo en la década de 2010, cuyo intervalo es muy amplio.
 
