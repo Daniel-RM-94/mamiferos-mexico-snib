@@ -1,9 +1,14 @@
-"""Estilo grafico comun a todos los analisis (matplotlib, PNG en modo claro).
+"""Estilo grafico comun a todos los analisis (matplotlib, PNG sobre fondo blanco).
 
-Colores por unidad FIJOS: una zona conserva su color en todas las figuras,
-aunque se grafique un subconjunto. Paleta validada (CVD y vision normal) para
-series adyacentes; tres tonos quedan bajo 3:1 de contraste, por eso cada
-figura se acompana de su tabla CSV.
+Presentacion academica: fondo blanco, grises neutros, ejes oscuros y una paleta
+de tonos profundos (no fluorescentes). Colores por unidad FIJOS: una zona
+conserva su color en todas las figuras, aunque se grafique un subconjunto.
+
+Paleta categorica validada sobre blanco con el validador de la guia dataviz
+(OKLab): los pares adyacentes se separan con vision normal (dE >= 15) y con
+daltonismo (dE >= 8.8); todos los tonos tienen contraste >= 3:1 con el fondo.
+Entre pares no adyacentes el mas cercano es ocre/naranja (dE 12.5), por eso
+las figuras con las siete zonas llevan leyenda y etiquetas directas.
 """
 import matplotlib as mpl
 import numpy as np
@@ -11,25 +16,26 @@ from matplotlib.colors import LinearSegmentedColormap, to_rgb
 
 from config import ZONAS_UTM
 
-SUPERFICIE = "#fcfcfb"
-TINTA = "#0b0b0b"
-TINTA_2 = "#52514e"
-TINTA_TENUE = "#898781"
-REJILLA = "#e1e0d9"
-EJE = "#c3c2b7"
-OTROS = "#b5b3ab"  # unidades sin slot propio
+SUPERFICIE = "#ffffff"
+TINTA = "#111111"
+TINTA_2 = "#3d3d3d"
+TINTA_TENUE = "#737373"
+REJILLA = "#e5e5e5"
+EJE = "#595959"
+OTROS = "#a6a6a6"  # unidades sin slot propio
 
-CATEGORICA = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100",
-              "#e87ba4", "#008300", "#4a3aa7", "#e34948"]
-AZUL = "#2a78d6"
+# azul, naranja quemado, verde, morado, ocre, carmin, azul petroleo, rojo
+CATEGORICA = ["#1f5fa8", "#c85a19", "#1e8a5e", "#7b3fa8",
+              "#8f7a00", "#c2306a", "#0e9fc0", "#b22b2b"]
+AZUL = "#1f5fa8"
 
 # Pasos discretos para mapas por clases
 PASOS_SECUENCIAL = ["#cde2fb", "#9ec5f4", "#6da7ec", "#3987e5",
                     "#256abf", "#184f95", "#0d366b"]
 # rojo (menos) <- gris neutro -> azul (mas); mismo numero de pasos por brazo
-PASOS_DIVERGENTE = ["#b3302f", "#e34948", "#f2a9a7", "#f0efec",
+PASOS_DIVERGENTE = ["#b3302f", "#e34948", "#f2a9a7", "#efefef",
                     "#9ec5f4", "#3987e5", "#1c5cab"]
-NEUTRO = "#f0efec"
+NEUTRO = "#efefef"
 
 # Rampa secuencial azul (claro -> oscuro) para heatmaps
 SECUENCIAL = LinearSegmentedColormap.from_list(
@@ -120,3 +126,13 @@ def heatmap(ax, matriz, fmt, vmax=None, mascara=None):
             ax.text(j, i, format(v, fmt), ha="center", va="center", fontsize=8.5,
                     color=tinta_sobre(im.cmap(im.norm(v))))
     return im
+
+
+MESES_ABREV = ["Ene", "Feb", "Mar", "Abr", "May", "Jun",
+               "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"]
+
+
+def eje_meses(ax):
+    """Eje x de enero (1) a diciembre (12) con los meses abreviados."""
+    ax.set_xticks(range(1, 13), MESES_ABREV, fontsize=8)
+    ax.set_xlim(0.5, 12.5)

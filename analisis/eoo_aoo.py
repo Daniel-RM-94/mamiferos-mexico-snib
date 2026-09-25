@@ -308,7 +308,7 @@ def mapa_eoo(nombre: str, df: pd.DataFrame, t: pd.DataFrame):
             f"<h4><i>{html.escape(nombre)}</i>{' (endémica)' if fila['endemica'] else ''}</h4>"
             f"<p>{html.escape(fila['nombre_comun'])}<br>{html.escape(codigos)}</p>"
             f"<table style='border-collapse:collapse;font-variant-numeric:tabular-nums'>"
-            f"<tr style='color:#52514e'><td></td><td style='padding-left:12px'>Todos</td>"
+            f"<tr style='color:#3d3d3d'><td></td><td style='padding-left:12px'>Todos</td>"
             f"<td style='padding-left:12px'>Desde {ANIO_RECIENTE}</td></tr>{filas_tabla}</table>"
             f"<p style='margin-top:8px'>Umbral B1 (EOO): <b>{fila['umbral_b1']}</b> "
             f"(desde {ANIO_RECIENTE}: <b>{fila[f'umbral_b1{rec}']}</b>)<br>"

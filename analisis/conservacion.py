@@ -133,7 +133,7 @@ def fig_cruce(cruce, destino):
     im = estilo.heatmap(ax, cruce, "d")
     ax.set_xlabel("IUCN")
     ax.set_ylabel("NOM-059")
-    ax.set_title("Especies nativas por categoria de riesgo: NOM-059 × IUCN")
+    ax.set_title("Especies nativas por categoría de riesgo: NOM-059 × IUCN")
     fig.colorbar(im, ax=ax, shrink=0.8, label="Especies").outline.set_visible(False)
     fig.savefig(destino)
     plt.close(fig)
@@ -186,7 +186,7 @@ def fig_anp_zonas(t, destino):
     ax.set_xlabel("% de registros dentro de un ANP")
     ax.set_xlim(0, max(t[[c for c, *_ in series]].max()) * 1.15)
     ax.grid(axis="y", visible=False)
-    ax.set_title("Registros dentro de Areas Naturales Protegidas por zona", pad=30)
+    ax.set_title("Registros dentro de Áreas Naturales Protegidas por zona", pad=30)
     ax.legend(loc="lower left", bbox_to_anchor=(0, 1.0), ncols=2, borderaxespad=0.3)
     fig.savefig(destino)
     plt.close(fig)
@@ -208,7 +208,7 @@ def fig_vacios(vacios, destino, top=25):
     ax.set_xlabel("% de registros dentro de un ANP")
     ax.grid(axis="y", visible=False)
     ax.set_title(f"Especies en riesgo con ≤ {MAX_PCT_ANP_VACIO} % de registros en ANP\n"
-                 f"(las {len(datos)} con mas registros; entre parentesis NOM-059 / IUCN)")
+                 f"(las {len(datos)} con más registros; entre paréntesis, NOM-059 / IUCN)")
     fig.savefig(destino)
     plt.close(fig)
 
@@ -254,7 +254,7 @@ def fig_exoticas(t, por_decada, destino, min_registros=10):
     fig, ax = plt.subplots(figsize=(10, 0.36 * len(datos) + 1.8))
     im = estilo.heatmap(ax, datos.set_axis(etiquetas), "d")
     ax.xaxis.tick_top()
-    ax.set_title("Registros de especies exoticas por decada "
+    ax.set_title("Registros de especies exóticas por década "
                  f"(especies con ≥ {min_registros} registros)", pad=26)
     fig.colorbar(im, ax=ax, shrink=0.6, label="Registros").outline.set_visible(False)
     fig.savefig(destino)

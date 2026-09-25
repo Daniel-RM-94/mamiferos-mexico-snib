@@ -285,10 +285,12 @@ def fig_estacionalidad(est, especies, destino):
             ax.plot(d["mes"], d["indice"], color=COLORES_CUENCA[cuenca],
                     label=f"{cuenca}: {d['registros_cuenca'].iat[0]:,} reg.")
         ax.set_title(estilo.cursiva(esp), fontsize=10.5)
-        ax.set_xticks(range(1, 13), [m[0] for m in MESES])
+        estilo.eje_meses(ax)
         ax.set_ylim(0, tope * 1.2)
         ax.legend(loc="upper right", fontsize=7.5, handlelength=1.2)
     ejes.flat[0].set_ylabel("Índice (1 = lo esperado por el esfuerzo)")
+    for ax in ejes.flat:
+        ax.set_xlabel("Mes")
     fig.suptitle("Estacionalidad de las ballenas, corregida por el esfuerzo de observación de "
                  "cetáceos", x=0.01, ha="left", fontsize=12, fontweight="semibold")
     fig.tight_layout()

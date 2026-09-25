@@ -204,9 +204,10 @@ def fig_estacionalidad(est, especies, destino):
         ax.set_title(esp, fontstyle="italic", fontsize=10.5)
         ax.legend(loc="upper left", fontsize=7.5, handlelength=1.2)
         ax.set_ylim(0, tope * 1.25)
-        ax.set_xticks(range(1, 13), [m[0] for m in MESES])
+        estilo.eje_meses(ax)
     for ax in list(ejes.flat)[len(especies):]:
         ax.set_visible(False)
+    fig.supxlabel("Mes", fontsize=9.5, color=estilo.TINTA_2)
     fig.supylabel("Índice (1 = lo esperado por el esfuerzo del mes)",
                   fontsize=9.5, color=estilo.TINTA_2)
     fig.suptitle("Estacionalidad de murciélagos migratorios, corregida por esfuerzo de muestreo",

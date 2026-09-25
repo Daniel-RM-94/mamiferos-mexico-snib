@@ -148,7 +148,7 @@ def clasificar(celdas: pd.DataFrame):
 
 CSS = """
 <style>
-.caja-mapa { position: fixed; z-index: 1000; background: #fcfcfb; color: #0b0b0b;
+.caja-mapa { position: fixed; z-index: 1000; background: #ffffff; color: #0b0b0b;
   border: 1px solid rgba(11,11,11,.10); border-radius: 8px; padding: 10px 12px;
   font: 12px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
   box-shadow: 0 1px 4px rgba(0,0,0,.08); max-width: 270px; }
@@ -418,7 +418,7 @@ def mapa_especie(nombre: str, destino_dir=SALIDA):
         grupo.add_to(mapa)
         filas_leyenda.append(
             f'<div class="fila-leyenda"><span class="punto" style="background:{color}">'
-            f"</span>{periodo}<span style='margin-left:auto;color:#52514e'>{n_reg:,}</span></div>")
+            f"</span>{periodo}<span style='margin-left:auto;color:#3d3d3d'>{n_reg:,}</span></div>")
 
     if (df["paismapa"] == "MEXICO").any():
         agregar_zonas(mapa)

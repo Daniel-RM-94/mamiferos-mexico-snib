@@ -237,13 +237,13 @@ def fig_rarefaccion(curvas, diversidad, colores, destino):
                 markeredgewidth=2, zorder=3)
     n_ref = int(diversidad["n_rarefaccion"].iloc[0])
     ax.axvline(n_ref, color=estilo.TINTA_TENUE, linewidth=1)
-    ax.annotate(f"n = {n_ref:,} registros\n(comparacion a igual esfuerzo)",
+    ax.annotate(f"n = {n_ref:,} registros\n(comparación a igual esfuerzo)",
                 xy=(n_ref, 0.02), xycoords=("data", "axes fraction"),
                 xytext=(6, 0), textcoords="offset points",
                 color=estilo.TINTA_2, fontsize=9, va="bottom")
     ax.set_xlabel("Registros (sin duplicados de evento)")
     ax.set_ylabel("Especies esperadas")
-    ax.set_title("Curvas de rarefaccion por unidad")
+    ax.set_title("Curvas de rarefacción por unidad")
     ax.set_xlim(0)
     ax.set_ylim(0)
     ax.xaxis.set_major_formatter(lambda x, _: f"{x:,.0f}")
@@ -283,7 +283,7 @@ def fig_dendrograma(m, destino):
                orientation="right", ax=ax, color_threshold=0,
                above_threshold_color=estilo.TINTA_2)
     ax.set_xlabel("Distancia (1 - Jaccard)")
-    ax.set_title("Agrupamiento de unidades por composicion de especies (UPGMA)")
+    ax.set_title("Agrupamiento de unidades por composición de especies (UPGMA)")
     ax.grid(axis="y", visible=False)
     ax.spines["left"].set_visible(False)
     fig.savefig(destino)
@@ -302,7 +302,7 @@ def fig_intersecciones(inter, unidades, destino, top=15):
         ax_b.annotate(f"{v}", (xi, v), xytext=(0, 3), textcoords="offset points",
                       ha="center", fontsize=8.5, color=estilo.TINTA_2)
     ax_b.set_ylabel("Especies")
-    ax_b.set_title(f"Especies por combinacion de unidades ({top} mas frecuentes)")
+    ax_b.set_title(f"Especies por combinación de unidades ({top} más frecuentes)")
     ax_b.grid(axis="x", visible=False)
 
     filas = {u: i for i, u in enumerate(unidades[::-1])}
