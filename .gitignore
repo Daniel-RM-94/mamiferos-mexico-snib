@@ -6,12 +6,11 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 
-# Datos: el maestro del SNIB se descarga de CONABIO y el procesado se regenera
-mamiferos.202503.parquet/
+# Datos: los crudos del SNIB se descargan de CONABIO (data/crudo/) y el
+# procesado se regenera (data/procesado/)
 data/
-*.csv.gz
-# CSV por zona UTM de CONABIO, solo para validar los límites de config.ZONAS_UTM
-mamiferosutm*.csv
+*.parquet
+*.csv
 
 # Resultados regenerables con ejecutar_todo.py (las figuras del reporte viven en docs/)
 outputs/

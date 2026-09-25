@@ -1,13 +1,19 @@
-"""Configuracion central del pipeline de mamiferos (SNIB-CONABIO 2025-03)."""
+"""Configuracion central del pipeline de mamiferos (SNIB-CONABIO 2025-12)."""
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent
-PARQUET_MAESTRO = RAIZ / "mamiferos.202503.parquet" / "mamiferos.parquet"
+
+# Datos crudos del geoportal de CONABIO (no se versionan). mamiferos.csv se
+# convierte una vez a Parquet con `python -m pipeline.convertir`.
+VERSION_SNIB = "2025-12"
+DIR_SNIB = RAIZ / "data" / "crudo" / f"snib_{VERSION_SNIB}"
+CSV_MAESTRO = DIR_SNIB / "mamiferos.csv"
+PARQUET_MAESTRO = DIR_SNIB / "mamiferos.parquet"
+# CSV por zona UTM (mamiferosutm<zona>.csv); solo se usan para validar ZONAS_UTM
+DIR_CSV_ZONAS = DIR_SNIB
+
 DIR_PROCESADO = RAIZ / "data" / "procesado"
 DIR_OUTPUTS = RAIZ / "outputs"
-# CSV por zona UTM (mamiferosutm<zona>.csv) del geoportal de CONABIO, version 2025-12;
-# solo se usan para validar ZONAS_UTM (validar_zonas.py)
-DIR_CSV_ZONAS = RAIZ / "data" / "crudo" / "snib_2025-12"
 
 # Zonas UTM de Mexico: nombre -> (lon_oeste, lon_este], mismo criterio que los
 # CSV mamiferosutm<zona>.csv de CONABIO (lon > oeste & lon <= este). Las siete

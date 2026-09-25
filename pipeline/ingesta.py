@@ -10,6 +10,10 @@ def ingesta(columnas=COLUMNAS, paises=None, excluir_fosiles=True) -> pd.DataFram
 
     paises: lista de valores de `paismapa` (p. ej. ["MEXICO"]); None = todos.
     """
+    if not PARQUET_MAESTRO.exists():
+        raise FileNotFoundError(f"No existe {PARQUET_MAESTRO}. Descarga mamiferos.csv del "
+                                "geoportal de CONABIO y conviertelo con "
+                                "`python -m pipeline.convertir`.")
     dataset = ds.dataset(PARQUET_MAESTRO, format="parquet")
 
     filtro = None

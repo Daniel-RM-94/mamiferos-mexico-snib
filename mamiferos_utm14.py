@@ -2,12 +2,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+from config import PARQUET_MAESTRO
+
 # Cargar datos desde el Parquet maestro del SNIB (contiene TODOS los ejemplares:
 # las 7 zonas UTM de Mexico + Centroamerica + EUA), filtrando por el mismo
 # criterio geografico + pais que usa CONABIO para armar mamiferosutm14a.csv
-# (verificado por idejemplar: coincide 1:1 con el CSV original de la zona).
-# Ruta relativa: el parquet vive dentro de este mismo proyecto.
-PARQUET_MAESTRO = "mamiferos.202503.parquet/mamiferos.parquet"
+# (verificado por idejemplar: coincide 1:1 con el CSV de la zona, version 2025-12).
 
 df = pd.read_parquet(PARQUET_MAESTRO)
 df = df[
